@@ -21,10 +21,12 @@ import System.IO
 import System.IO.Extra
 
 main = do
-  dev <- lookupEnv "ATTACH_RESOURCE_ZIP"
-  case dev of
-    Just _ -> defaultMainWithHooks simpleUserHooks {postCopy = appendResourceArchive}
-    Nothing -> defaultMain
+  --dev <- lookupEnv "ATTACH_RESOURCE_ZIP"
+  --dev <- Just IO "1"
+  --case dev of
+  --  Just _ -> defaultMainWithHooks simpleUserHooks {postCopy = appendResourceArchive}
+  --  Nothing -> defaultMain
+  defaultMainWithHooks simpleUserHooks {postCopy = appendResourceArchive}
 
 resourceDir = "./resource"
 
